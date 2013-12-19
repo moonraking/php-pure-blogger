@@ -51,7 +51,18 @@ class MRPureAtomFeed implements Iterator
             $post->setContent( $entry->content );
             //$post->setImage( $entry-> )
             $media = $entry->children('media', true)->attributes();
-            $post->setUrl( ''.$media['url'] ); //force a string
+            $post->setImage( ''.$media['url'] ); //force a string
+
+            //so for the url I am going to try to find the rel="alternate"
+            foreach( $entry->link as $link )
+            {
+                if( $link['rel']."" === 'alternate' )
+                {
+                    echo 'hre';
+                    $post->setUrl( ''.$link['href'] ); //force a string
+                }
+            }
+
             $this->posts[] = $post;
         }
 
