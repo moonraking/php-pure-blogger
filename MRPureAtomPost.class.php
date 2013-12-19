@@ -7,6 +7,10 @@ class MRPureAtomPost
     private $content = '';
     private $url = '';
 
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 
     public function getTitle()
     {

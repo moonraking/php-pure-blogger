@@ -26,3 +26,7 @@ echo "<pre>";
 print_r( $feed );
 echo "</pre>";
 
+foreach( $feed as $post )
+{
+    echo $post . "<br/>";
+}
