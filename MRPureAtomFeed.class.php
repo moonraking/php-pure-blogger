@@ -58,6 +58,7 @@ class MRPureAtomFeed implements Iterator
             {
                 if( $link['rel']."" === 'alternate' )
                 {
+                    echo 'hre';
                     $post->setUrl( ''.$link['href'] ); //force a string
                 }
             }
